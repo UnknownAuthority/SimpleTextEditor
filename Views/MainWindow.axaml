@@ -11,7 +11,7 @@
         <Button  DockPanel.Dock="Bottom" Command="{Binding $parent[Window].DataContext.Save}"> Save</Button>
         <Button DockPanel.Dock="Bottom" Command="{Binding $parent[Window].DataContext.Load}">Load</Button>
 
-        <TextBox AcceptsReturn = "True"  Watermark="heya input your text here!" Text="{Binding Text}"/>
+        <TextBox AcceptsReturn = "True"  Watermark="input your text here" Text="{Binding Text}"/>
 
     </DockPanel>
 
