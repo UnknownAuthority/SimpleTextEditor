@@ -9,18 +9,17 @@ namespace SimpleTextEditor.ViewModels
     
     public class MainWindowViewModel : ViewModelBase
     {
-        public string? Text{get; set;}
-
-        public void Save()
-        {
-            File.WriteAllTextAsync(@"Doc.txt", Text);
-        }
-        public void Load()
-        {
-            Text = File.ReadAllTextAsync(@"Doc.txt", Encoding.UTF8).Result;
-            
+        public ViewModelBase? content;
+        public MainWindowViewModel(){
+            Content =  new TexteditViewModel();
 
         }
+        public ViewModelBase? Content{
+            get => content;
+            set => this.RaiseAndSetIfChanged(ref content, value);
+        }    
         
-    }
+        
+        
+    }   
 }

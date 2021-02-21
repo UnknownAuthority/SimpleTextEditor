@@ -6,13 +6,9 @@
         Width="200" Height="200"
         x:Class="SimpleTextEditor.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="SimpleTextEditor">
-    <DockPanel>
-        <Button  DockPanel.Dock="Bottom" Command="{Binding $parent[Window].DataContext.Save}"> Save</Button>
-        <Button DockPanel.Dock="Bottom" Command="{Binding $parent[Window].DataContext.Load}">Load</Button>
+        Title="SimpleTextEditor"
+        Content="{Binding Content}">
+    
 
-        <TextBox AcceptsReturn = "True"  Watermark="input your text here" Text="{Binding Text}"/>
-
-    </DockPanel>
 
 </Window>
