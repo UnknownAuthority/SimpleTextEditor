@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SimpleTextEditor.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Width="200" Height="200"
+        x:Class="SimpleTextEditor.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="SimpleTextEditor">
+    <DockPanel>
+        <Button  DockPanel.Dock="Bottom" Command="{Binding $parent[Window].DataContext.Save}"> Save</Button>
+        <Button DockPanel.Dock="Bottom" Command="{Binding $parent[Window].DataContext.Load}">Load</Button>
+
+        <TextBox AcceptsReturn = "True"  Watermark="heya input your text here!" Text="{Binding Text}"/>
+
+    </DockPanel>
+
+</Window>
