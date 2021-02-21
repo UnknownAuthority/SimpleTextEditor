@@ -9,7 +9,7 @@ namespace SimpleTextEditor.ViewModels
     
     public class MainWindowViewModel : ViewModelBase
     {
-        
+        public string? Text{get; set;}
 
         public void Save()
         {
@@ -21,6 +21,6 @@ namespace SimpleTextEditor.ViewModels
             
 
         }
-        public string? Text{get; set;}
+        
     }
 }
