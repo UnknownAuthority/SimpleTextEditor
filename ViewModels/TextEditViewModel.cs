@@ -13,7 +13,18 @@ namespace SimpleTextEditor.ViewModels{
         }
         public void Load()
         {
-            Text = File.ReadAllTextAsync(@"Doc.txt", Encoding.UTF8).Result;
+            
+            try
+            {
+                Text = File.ReadAllTextAsync(@"Doc.txt", Encoding.UTF8).Result;    
+            }
+            catch (System.AggregateException)
+            {
+                File.Create(@"Doc.txt");
+                
+            }
+                        
+            
             
 
 
