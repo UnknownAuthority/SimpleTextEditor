@@ -18,14 +18,13 @@ namespace SimpleTextEditor.ViewModels
         public void Load()
         {
 
-            try
+            if (File.Exists(@"Doc.txt"))
             {
                 Text = File.ReadAllTextAsync(@"Doc.txt", Encoding.UTF8).Result;
             }
-            catch (System.AggregateException)
+            else
             {
                 File.Create(@"Doc.txt");
-
             }
 
 
