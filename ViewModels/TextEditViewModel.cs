@@ -14,10 +14,7 @@ namespace SimpleTextEditor.ViewModels
             set => this.RaiseAndSetIfChanged(ref text, value);
         }
 
-        public void Save()
-        {
-            File.WriteAllTextAsync(@"Doc.txt", Text);
-        }
+        public void Save() => File.WriteAllTextAsync(@"Doc.txt", Text);
         public void Load()
         {
 
