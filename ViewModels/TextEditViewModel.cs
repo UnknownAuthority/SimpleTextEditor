@@ -10,7 +10,7 @@ namespace SimpleTextEditor.ViewModels
         public string? Text
         {
             get => text;
-            //Again using RaiseAndSetIfChanged because Avalonia depends on change notifs to update gui
+            //  Again using RaiseAndSetIfChanged because Avalonia depends on change notifs to update gui
             set => this.RaiseAndSetIfChanged(ref text, value);
         }
 
