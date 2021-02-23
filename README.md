@@ -2,6 +2,12 @@
 
 This is a very simple text editor made in C# with the gui made using avalonia
 
+## How to run
+
+Download the release, unzip it and cd to the extracted folder, and run "dotnet SimpleTextEditor.dll" in the cli, make sure you have dotnet installed
+
+
+
 ## Features
 
 It only supports reading and  writing from one file for now, can load and save text
