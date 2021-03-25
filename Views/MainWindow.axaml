@@ -3,7 +3,7 @@
         xmlns:vm="using:SimpleTextEditor.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Width="200" Height="200"
+        Width="800" Height="800"
         x:Class="SimpleTextEditor.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="SimpleTextEditor"
