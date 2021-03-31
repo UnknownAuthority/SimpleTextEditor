@@ -3,11 +3,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SimpleTextEditor.Views.TexteditView">
+             x:Class="SimpleTextEditor.Views.TextEditView">
     <DockPanel>
         <Button  DockPanel.Dock="Bottom" Command="{Binding Save}"> Save</Button>
         <Button DockPanel.Dock="Bottom" Command="{Binding Load}">Load</Button>
-
+        <Button DockPanel.Dock="Top" Command="{Binding $parent[Window].DataContext.FilePath}">File</Button>
         <TextBox AcceptsReturn = "True"  Watermark="input your text here" Text="{Binding Text}"/>
 
     </DockPanel>

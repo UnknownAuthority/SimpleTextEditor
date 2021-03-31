@@ -4,11 +4,20 @@ using ReactiveUI;
 
 namespace SimpleTextEditor.ViewModels
 {
-    public class TexteditViewModel : ViewModelBase
+    public class TextEditViewModel : ViewModelBase
     {
 
+        private string Path = SimpleTextEditor.ViewModels.FilePathViewModel.Path;
 
-        public string text;
+        private string Check()
+        {
+            if (Path.Length < 1)
+            {
+                return "Doc.txt";
+            }
+            return Path;
+        }
+        private string? text;
         public string Text
         {
             get => text;
@@ -17,19 +26,22 @@ namespace SimpleTextEditor.ViewModels
 
         }
 
-        public void Save() => File.WriteAllTextAsync(@"Doc.txt", Text);
+        public void Save()
+        {
+            File.WriteAllTextAsync(Check(), Text);
+        }
         public void Load()
         {
-
-            if (File.Exists(@"Doc.txt"))
+            Path = Check();
+            if (File.Exists(Path))
             {
 
-                Text = File.ReadAllTextAsync(@"Doc.txt", Encoding.UTF8).Result;
+                Text = File.ReadAllTextAsync(Path, Encoding.UTF8).Result;
 
             }
             else
             {
-                File.Create(@"Doc.txt");
+                File.Create(Path);
             }
         }
     }

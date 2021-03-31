@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace SimpleTextEditor.Views
 {
-    public partial class TexteditView : UserControl
+    public partial class TextEditView : UserControl
     {
-        public TexteditView()
+        public TextEditView()
         {
             InitializeComponent();
         }

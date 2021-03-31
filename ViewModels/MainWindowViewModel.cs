@@ -11,8 +11,8 @@ namespace SimpleTextEditor.ViewModels
     {
         public ViewModelBase? content;
         public MainWindowViewModel(){
-            //  We are setting the Content to a new instance tothe TexteditViewModel
-            Content =  new TexteditViewModel();
+            //  We are setting the Content to a new instance to the TexteditViewModel
+            Content =  new TextEditViewModel();
 
         }
         public ViewModelBase? Content{
@@ -21,7 +21,12 @@ namespace SimpleTextEditor.ViewModels
             //  using RaiseAndSetIfChanged because avalonaia uses change notifs to Update the gui
             //  this will be useful later when we will be able to switch between multiple windows 
             set => this.RaiseAndSetIfChanged(ref content, value);
-        }    
+        }
+        public void FilePath()
+        {
+            Content = new FilePathViewModel();
+        }  
+        public void TextEdit() => Content = new TextEditViewModel(); 
         
         
         
