@@ -11,7 +11,7 @@ namespace SimpleTextEditor.ViewModels
 
         private string Check()
         {
-            if (Path.Length < 1)
+            if (Path == null || Path.Length < 1)
             {
                 return "Doc.txt";
             }
@@ -26,23 +26,20 @@ namespace SimpleTextEditor.ViewModels
 
         }
 
-        public void Save()
-        {
-            File.WriteAllTextAsync(Check(), Text);
-        }
+        public void Save() => File.WriteAllTextAsync(Check(), Text);
         public void Load()
         {
             Path = Check();
-            if (File.Exists(Path))
+            if (!File.Exists(Path))
             {
-
-                Text = File.ReadAllTextAsync(Path, Encoding.UTF8).Result;
-
+                FileStream fileStream = File.Create(Path);
+                fileStream.DisposeAsync();
+                Text = "";
+                return;
             }
-            else
-            {
-                File.Create(Path);
-            }
+            Text = File.ReadAllTextAsync(Path, Encoding.UTF8).Result;
+
+
         }
     }
 }
