@@ -11,14 +11,15 @@ namespace SimpleTextEditor.ViewModels
 
         private string Check()
         {
-            if (Path == null || Path.Length < 1)
+            if (Path == null || Path.Length < 1 || !Directory.Exists(Path))
             {
+                Text = "You haven't given a  valid filename/directory so we have defaulted to Doc.txt";
                 return "Doc.txt";
             }
             return Path;
         }
         private string? text;
-        public string Text
+        public string? Text
         {
             get => text;
             //  Again using RaiseAndSetIfChanged because Avalonia depends on change notifs to update gui
