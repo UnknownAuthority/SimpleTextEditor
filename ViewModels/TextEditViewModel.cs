@@ -13,7 +13,7 @@ namespace SimpleTextEditor.ViewModels
         {
             if (Path == null || Path.Length < 1 || !Directory.Exists(Path))
             {
-                Text = "You haven't given a  valid filename/directory so we have defaulted to Doc.txt";
+                Text = "You haven't given a valid filename/directory so we have defaulted to Doc.txt";
                 return "Doc.txt";
             }
             return Path;
