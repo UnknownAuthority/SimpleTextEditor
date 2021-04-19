@@ -5,7 +5,7 @@
              mc:Ignorable="d" d:DesignWidth="100" d:DesignHeight="100"
              x:Class="SimpleTextEditor.Views.FilePathView">
 <DockPanel>
-<TextBox AcceptsReturn = "False"  Watermark="input your file's path here" Text="{Binding path}" DockPanel.Dock="Top"/>
+<TextBox AcceptsReturn = "False"  Watermark="input your file's path here" Text="{Binding _path}" DockPanel.Dock="Top"/>
 <Button DockPanel.Dock="Bottom" Content="Done" Command="{Binding $parent[Window].DataContext.TextEdit}"/>
 </DockPanel>
 </UserControl>

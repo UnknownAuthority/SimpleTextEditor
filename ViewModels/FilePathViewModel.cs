@@ -3,20 +3,20 @@ namespace SimpleTextEditor.ViewModels
 {
     public class FilePathViewModel : ViewModelBase
     {
-        public static string? path { get; set; }
+        public static string? _path { get; set; }
         public static string Path
         {
             get
             {
-                if (path == null || path.Length < 1 || !System.IO.Directory.Exists(path))
+                if (_path == null || _path.Length < 1 || !System.IO.Directory.Exists(_path))
                 {
                     return "Doc.txt";
                     
                 }
-                return path;
+                return _path;
             }
 
-            set => path = value;
+            set => _path = value;
         }
     }
 
